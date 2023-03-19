@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.box-rigth{
+  width:50%;
+  height:500px;
+  position:absolute;
+  top:0;
+  right:0;
+  background: url('https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzcwODM5MzE&ixlib=rb-4.0.3&q=80');
+  background-size:cover;
+  background-position:center;
+  z-index:-1;
+  transition: .6s;
+}
+
+
+.wrapper{
+  max-width: 1150px;
+  margin:auto;
+}
+
+
+header{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding: 20px 20px;
+  position:relative;
+  z-index:1000;
+}
+
+nav{
+  display:flex;
+}
+
+.open, .close{
+  display:none;
+  transition: .6s;
+  position:absolute;
+  right:20px;
+}
+
+
+ul{
+  display:flex;
+  list-style:none;
+  gap:20px;
+  color:#fff;
+  font-weight:400;
+}
+
+header > div{
+  font-weight:bold;
+  font-size:16px;
+}
+
+
+section{
+  padding:20px;
+  height:calc(100vh - 70px);
+  position:relative;
+}
+
+.arrow{
+  width:40px;
+  height:100px;
+  position:absolute;
+  bottom:0px;
+  animation: .8s move infinite;
+
+}
+
+@keyframes move{
+  0%{
+    transform: translatey(-5px);
+  }
+  100%{
+    transform: translatey(0px);
+  }
+  
+}
+
+.box-left{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:left;
+  min-height:400px;
+  max-width:50%;
+}
+
+.box-left h1{
+  font-size:3rem;
+  font-weight:700;
+  line-height: 4.5rem;
+}
+.box-left p{
+  font-weight:400;
+  max-width:360px;
+}
+
+span{
+  background: orangered;
+  color:#ffff;
+  padding:3px;
+  border-radius:5px;
+}
+
+
+@media (max-width:800px){
+  .box-rigth{
+    width:100%;
+    min-height:100vh;
+    background-position:10%;
+    transition: .6s;
+  }
+  .box-left{
+    max-width:100%;
+  }
+  nav{
+    display:none;
+    transition: .6s;
+  }
+  
+  .open{
+    display:block;
+    transition: .6s;
+  }
+  .active ul{
+    flex-direction:column;
+    justify-content:center;
+    color:#000;
+    background: #ffff;
+    border-radius:20px;
+    height:300px;
+    
+  }
+  
+  .active ul li{
+    padding:20px;
+  }
+  
+   .active ul li:hover{
+    background: #000;
+    color:#fff;
+     text-decoration:underline;
+
+  }
+  
+  .active nav {
+    transition: .6s;
+    display:block;
+
+    position:absolute;
+    right:20px;
+    top:60px;
+    width:200px;
+    
+  
+  }
+  
+  .active .open {
+    display:none;
+  }
+  
+ 
+  
+  .active .close{
+    display: block;
+  }
+
+  
+}
